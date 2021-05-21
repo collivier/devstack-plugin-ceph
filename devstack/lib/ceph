@@ -528,6 +528,7 @@ function _configure_rgw_ceph_section {
     iniset -sudo ${CEPH_CONF_FILE} ${key} "rgw_max_attr_size" "1024"
     iniset -sudo ${CEPH_CONF_FILE} ${key} "rgw_max_attrs_num_in_req" "32"
     iniset -sudo ${CEPH_CONF_FILE} ${key} "rgw_max_attr_name_len" "64"
+    iniset -sudo ${CEPH_CONF_FILE} ${key} "rgw keystone implicit tenants" "swift"
 
     if [ "$CEPH_RGW_KEYSTONE_SSL" = "True" ]; then
         iniset -sudo ${CEPH_CONF_FILE} ${key} "nss db path" "${dest}/nss"
